@@ -1,6 +1,6 @@
 export default function Hotel_hero() {
   return (
-    <section className="relative w-full h-screen min-h-150 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full h-screen min-h-150 flex items-center justify-center overflow-hidden">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -32,9 +32,11 @@ export default function Hotel_hero() {
         </p>
 
         {/* Single Focused Button */}
+        <a href="#book-hotel">
         <button className="bg-(--secondary-color) text-(--primary-color) hover:bg-white px-12 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:scale-105">
           Book Your Stay
         </button>
+        </a>
       </div>
     </section>
   );
