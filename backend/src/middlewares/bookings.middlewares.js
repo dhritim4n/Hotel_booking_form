@@ -13,8 +13,7 @@ const isValid = [
     body("check_in_date").notEmpty().withMessage("Check in date is required"),
     body("check_out_date").notEmpty().withMessage("Check out date is required"),
     body("room_type").notEmpty().withMessage("Room type is required"),
-    body("guest_count").notEmpty().withMessage("Guest count is required"),
-    body("special_request").notEmpty().withMessage("Special request is required")
+    body("guest_count").notEmpty().withMessage("Guest count is required")
 ]
 
 

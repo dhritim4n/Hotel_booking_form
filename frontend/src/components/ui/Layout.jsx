@@ -38,9 +38,9 @@ const Layout = ({ children }) => {
         {/* Mobile Nav Links (Dropdown) */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
           <div className="flex flex-col gap-4 pb-4 border-t border-white/10 pt-4">
-            <a href="/" className="text-sm font-medium hover:text-(--secondary-color)">Home</a>
-            <a href="/book" className="text-sm font-medium hover:text-(--secondary-color)">Book</a>
-            <a href="/about" className="text-sm font-medium hover:text-(--secondary-color)">About</a>
+            <a href="#home" className="text-sm font-medium hover:text-(--secondary-color)">Home</a>
+            <a href="#book-hotel" className="text-sm font-medium hover:text-(--secondary-color)">Book</a>
+            <a href="#about" className="text-sm font-medium hover:text-(--secondary-color)">About</a>
           </div>
         </div>
       </nav>

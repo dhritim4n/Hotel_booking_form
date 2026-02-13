@@ -16,4 +16,5 @@ app.use(cookieParser())
 
 app.use("/api/bookings", bookings_router)
 
+
 export default app;

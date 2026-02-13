@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Toast from "./ui/Toast.jsx";
+import { submit_form } from "../api/bookings.js";
 
 export default function BookHotel() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ export default function BookHotel() {
       adults: 1,
       children: 0,
     },
-    special_requests: "",
+    special_request: "",
   });
 
   const [toast, setToast] = useState({ show: false, message: "", type: "success" });
@@ -31,7 +32,7 @@ export default function BookHotel() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // 1. Required Fields Check
@@ -107,15 +108,25 @@ export default function BookHotel() {
       return;
     }
 
-    // SUCCESS CASE
-    setToast({
-      show: true,
-      message: `Thank you, ${formData.name.split(' ')[0]}! Your reservation is confirmed.`,
-      type: "success",
-    });
+    const submit_response = await submit_form(formData);
 
-    // Optional: Reset form here
-    // setFormData({...initialState}); 
+    if (!submit_response) {
+      setToast({
+        show: true,
+        message: "Something went wrong. Please try again later.",
+        type: "error",
+      })
+    }
+
+    if(submit_response.data.success) {
+      setToast({
+        show: true,
+        message: "Form Submitted !",
+        type: "success",
+      });
+      setFormData({...initialState}); 
+    }
+
   };
 
   return (
@@ -248,11 +259,11 @@ export default function BookHotel() {
           <div className="flex flex-col md:col-span-2">
             <label className="text-sm font-semibold mb-1 text-(--primary-color)">Special Requests</label>
             <textarea
-              name="special_requests"
+              name="special_request"
               rows="2"
               className="border-b-2 border-gray-200 focus:border-(--secondary-color) outline-none py-2 resize-none"
               placeholder="Dietary requirements, high floor, etc."
-              value={formData.special_requests}
+              value={formData.special_request}
               onChange={onChange}
             ></textarea>
           </div>

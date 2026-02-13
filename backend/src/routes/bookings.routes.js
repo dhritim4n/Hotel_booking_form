@@ -9,7 +9,7 @@ import { validate } from "../middlewares/bookings.middlewares.js";
 const bookings_router = Router();
 
 bookings_router.get("/", get_bookings)
-bookings_router.post("/submit_form", validate, add_booking)
+bookings_router.post("/add_booking", validate, add_booking)
 
 
 export {
