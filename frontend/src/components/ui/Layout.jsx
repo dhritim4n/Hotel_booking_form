@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
           </div>
           <div>
             <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Location</h4>
-            <p className="text-sm text-gray-400">123 Elegance Blvd, Manhattan, NY 10001</p>
+            <p className="text-sm text-gray-400">Kolkata, West Bengal, India</p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 text-center text-xs text-gray-500 uppercase tracking-widest">

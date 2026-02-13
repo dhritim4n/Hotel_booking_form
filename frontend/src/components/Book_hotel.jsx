@@ -180,7 +180,7 @@ export default function BookHotel() {
               type="tel"
               name="phone"
               className="border-b-2 border-gray-200 focus:border-(--secondary-color) outline-none py-2 transition-colors"
-              placeholder="+1 234 567 890"
+              placeholder="+91 9876543210"
               value={formData.phone}
               onChange={onChange}
               required
